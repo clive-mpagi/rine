@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rina Collection - Shop</title>
+<style>
+/* --------- General --------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
+
+/* --------- Nav --------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6a0dad;
+}
+
+nav .tagline {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  flex: 1;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #6a0dad;
+}
+
+nav .shop-btn {
+  background-color: #6a0dad;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+nav .shop-btn:hover {
+  background-color: #8e2ad1;
+}
+
+nav .shop-btn:active {
+  transform: scale(0.95);
+}
+
+/* --------- Hamburger --------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+/* --------- Hero --------- */
+.hero {
+  position: relative;
+  height: 70vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('image/bring.png>');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-content .hero-btn {
+  background-color: #6a0dad;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.hero-content .hero-btn:hover {
+  background-color: #8e2ad1;
+}
+
+.hero-content .hero-btn:active {
+  transform: scale(0.95);
+}
+
+/* --------- Products Grid --------- */
+section.products {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+section.products h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.products-grid div {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.products-grid div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.products-grid img {
+  width: 100%;
+  display: block;
+}
+
+.products-grid h4 {
+  padding: 0.5rem 1rem;
+}
+
+.products-grid p {
+  padding: 0 1rem 1rem 1rem;
+  color: #6a0dad;
+  font-weight: bold;
+}
+
+/* --------- Newsletter --------- */
+section.newsletter {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+section.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+section.newsletter p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 0.8rem;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
+
+.newsletter-form button {
+  padding: 0.8rem 1.5rem;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #8e2ad1;
+}
+
+/* --------- Footer --------- */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: #6a0dad;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* --------- Responsive --------- */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .newsletter-form input[type="email"] {
+    width: 70%;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter-form button {
+    width: 70%;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- --------- Nav --------- -->
+<nav>
+  <div class="logo">
+    Rina Collection
+    <div class="tagline">Empowering Plus-Size Style</div>
+  </div>
+  <ul id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="new arrivals.html">New Arrivals</a></li>
+    <li><a href="sale.html">Sale</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="product.html">product</a></li>
+  </ul>
+    <a href="shop.html" 
+       style="padding:12px 24px; background:#ff6600; color:white; text-decoration:none; 
+       font-size:18px; border-radius:8px;">
+       Shop Now
+    </a>
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>
+
+<!-- --------- Hero Section --------- -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Explore Our Collection</h1>
+    <p>Discover stylish plus-size dresses, tops, and accessories made for comfort and elegance.</p>
+      <a href="shop.html" 
+       style="padding:12px 24px; background:#ff6600; color:white; text-decoration:none; 
+       font-size:18px; border-radius:8px;">
+       Shop Now
+    </a>
+  </div>
+</section>
+
+<!-- --------- Products Grid --------- -->
+<section class="products">
+  <h2>Our Products</h2>
+  <div class="products-grid">
+    <div><img src="image/black.png"><h4>Elegant Dress</h4><p>$49.99</p></div>
+    <div><img src="image/blue.png"><h4>Summer Top</h4><p>$29.99</p></div>
+    <div><img src="image/come.png"><h4>Plus Size Skirt</h4><p>$39.99</p></div>
+    <div><img src="image/down.png"><h4>Stylish Blouse</h4><p>$34.99</p></div>
+    <div><img src="image/drop.png"><h4>Casual Dress</h4><p>$44.99</p></div>
+    <div><img src="image/more.png"><h4>Chic Top</h4><p>$27.99</p></div>
+  </div>
+</section>
+
+<!-- --------- Newsletter --------- -->
+<section class="newsletter">
+  <h2>Subscribe to Our Newsletter</h2>
+  <p>Get 10% off your first order and stay updated with the latest trends!</p>
+  <form class="newsletter-form">
+    <input type="email" placeholder="Enter your email">
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- --------- Footer --------- -->
+<footer>
+  <p>&copy; 2025 Rina Collection. All rights reserved.</p>
+  <p>Follow us on 
+    <a href="#">Instagram</a> | 
+    <a href="#">Facebook</a> | 
+    <a href="#">Pinterest</a>
+  </p>
+</footer>
+
+<script>
+// --------- Hamburger Toggle ---------
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>
