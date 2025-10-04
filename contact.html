@@ -326,9 +326,8 @@ footer a:hover {
 
 <!-- --------- Contact Form --------- -->
  <section style="background:#ffeb99; padding:80px 20px; text-align:center;">
-    <h1 style="font-size:32px; margin-bottom:50px; color:#333; 
-               animation:fadeIn 1s ease-out; display:inline-block;">
-      Contact Rina Collection 
+    <h1 style="font-size:32px; margin-bottom:50px; color:#333;">
+      Contact Rina Collection ✨
     </h1>
 
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px;">
@@ -342,16 +341,16 @@ footer a:hover {
         
         <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
              alt="Landline phone" 
-             style="width:80px; height:80px; margin-bottom:15px; animation: pulse 3s infinite;">
+             style="width:80px; height:80px; margin-bottom:15px;">
         
         <p style="margin:6px 0; font-size:16px; color:#444;">
-           <a href="tel:+14372591521" style="text-decoration:none; color:#b38600;">+1 437-259-1521</a>
+          📞 <a href="tel:+123456789" style="text-decoration:none; color:#b38600;">+1 234 567 89</a>
         </p>
         <p style="margin:6px 0; font-size:16px; color:#444;">
-           <a href="mailto:hello@rinacollection.com" style="text-decoration:none; color:#b38600;">hello@rinacollection.com</a>
+          📧 <a href="mailto:hello@rinacollection.com" style="text-decoration:none; color:#b38600;">hello@rinacollection.com</a>
         </p>
         <p style="margin:6px 0; font-size:14px; color:#555;">Toronto, Canada</p>
-        <p style="margin:6px 0; font-size:14px; color:#555;">Delivery Anytime </p>
+        <p style="margin:6px 0; font-size:14px; color:#555;">Delivery Anytime 🚚</p>
       </div>
 
       <!-- Call to Action Circle -->
@@ -362,26 +361,35 @@ footer a:hover {
            onmouseout="this.style.transform='scale(1)';">
         
         <h2 style="font-size:20px; margin-bottom:15px; color:#222;">
-          Shine With Us 
+          Shine With Us 🌟
         </h2>
         <p style="font-size:16px; color:#444; line-height:1.5; padding:0 15px;">
           Your journey with <b>Rina Collection</b> has already started.  
           Contact us today — let’s make your life shine brighter.
         </p>
       </div>
-
     </div>
+
+    <!-- Product Preview Row -->
+    <div style="margin-top:60px; background:#fff8d6; padding:30px; border-radius:20px; 
+                box-shadow:0 4px 12px rgba(0,0,0,0.1); display:flex; flex-wrap:wrap; 
+                justify-content:center; gap:20px;">
+      
+      <img src="https://via.placeholder.com/150" alt="Product 1"
+           style="width:150px; height:150px; border-radius:10px; cursor:pointer; transition:transform 0.4s ease;"
+           onclick="this.style.transform='scale(1.2)'; setTimeout(()=>{this.style.transform='scale(1)';},400)">
+      
+      <img src="https://via.placeholder.com/150" alt="Product 2"
+           style="width:150px; height:150px; border-radius:10px; cursor:pointer; transition:transform 0.4s ease;"
+           onclick="this.style.transform='scale(1.2)'; setTimeout(()=>{this.style.transform='scale(1)';},400)">
+      
+      <img src="https://via.placeholder.com/150" alt="Product 3"
+           style="width:150px; height:150px; border-radius:10px; cursor:pointer; transition:transform 0.4s ease;"
+           onclick="this.style.transform='scale(1.2)'; setTimeout(()=>{this.style.transform='scale(1)';},400)">
+    </div>
+
   </section>
 
-  <!-- Small inline animations -->
-  <script>
-    // Simple pulse animation for phone icon
-    const phoneIcon = document.querySelector("img[alt='Landline phone']");
-    setInterval(() => {
-      phoneIcon.style.transform = "scale(1.1)";
-      setTimeout(() => { phoneIcon.style.transform = "scale(1)"; }, 500);
-    }, 2000);
-  </script>
 
 <!-- --------- Newsletter --------- -->
 <section class="newsletter">
@@ -414,5 +422,6 @@ hamburger.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
